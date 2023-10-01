@@ -1,7 +1,7 @@
 {
   "name": "fts-with-dexie-core",
   "version": "0.1.0",
-  "description": "",
+  "description": "A Library that creates data for fts-with-dexie",
   "source": "src/main.ts",
   "main": "dist/main.js",
   "module": "dist/module.js",
@@ -15,9 +15,14 @@
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
-  "keywords": ["full-text-search", "indexeddb", "dexie"],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "full-text-search",
+    "fts",
+    "indexeddb",
+    "dexie"
+  ],
+  "author": "ahmet.feyzullah.yildiz@gmail.com",
+  "license": "MIT",
   "devDependencies": {
     "@parcel/packager-ts": "^2.9.3",
     "@parcel/transformer-typescript-types": "^2.9.3",
