@@ -2,6 +2,9 @@
   "name": "fts-with-dexie-core",
   "version": "0.1.0",
   "description": "A Library that creates data for fts-with-dexie",
+  "repository": {
+    "url": "https://github.com/feyzullahyildiz/fts-with-dexie-core"
+  },
   "source": "src/main.ts",
   "main": "dist/main.js",
   "module": "dist/module.js",
