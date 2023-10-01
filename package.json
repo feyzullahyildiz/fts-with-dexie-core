@@ -15,7 +15,7 @@
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
-  "keywords": [],
+  "keywords": ["full-text-search", "indexeddb", "dexie"],
   "author": "",
   "license": "ISC",
   "devDependencies": {
