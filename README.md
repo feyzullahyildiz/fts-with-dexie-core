@@ -1,6 +1,6 @@
 # How to use
 
-```ts
+```js
 import { parseData, RecommendedSlugifyAllowedCharacters} from "fts-with-dexie-core";
 import { slugify } from "transliteration";
 
@@ -26,14 +26,20 @@ const movies = [
     desc: "After his son is captured in the Great Barrier Reef and taken to Sydney, a timid clownfish sets out on a journey to bring him home.",
   },
 ];
+const moviesForFTS = movies.map((m) => ({
+  id: m.id,
+  fts_title: mySlugify(m.title),
+  fts_desc: mySlugify(m.desc),
+}));
 const config = {
   idPropertyName: "id",
   ftsFieldNames: ["title", "desc"],
   ftsFieldWeights: [1.2, 1],
 };
+
 const results = [];
-for (const movie of movies) {
-  const res = parseData(config, movie);
+for (const ftsData of moviesForFTS) {
+  const res = parseData(config, ftsData);
   results.push(...res);
 }
 // THEN, use this results array in "fts-with-dexie". But it is not published yet :D
