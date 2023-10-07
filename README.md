@@ -33,14 +33,16 @@ const moviesForFTS = movies.map((m) => ({
 }));
 const config = {
   idPropertyName: "id",
-  ftsFieldNames: ["title", "desc"],
+  ftsFieldNames: ["fts_title", "fts_desc"],
   ftsFieldWeights: [1.2, 1],
 };
 
-const results = [];
+const bulkInsertableData = [];
 for (const ftsData of moviesForFTS) {
-  const res = parseData(config, ftsData);
-  results.push(...res);
+  const insertableData = parseData(config, ftsData);
+  bulkInsertableData.push(insertableData);
 }
-// THEN, use this results array in "fts-with-dexie". But it is not published yet :D
+
 ```
+Now your data is ready in `bulkInsertableData` array. You can use it in [fts-with-dexie](https://www.npmjs.com/package/fts-with-dexie)
+
